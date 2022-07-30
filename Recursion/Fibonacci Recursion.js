@@ -6,7 +6,15 @@ function fibonnacciRecursion(number) {
   return fibonnacciRecursion(number - 1) + fibonnacciRecursion(number - 2);
 }
 
-// function fibonacciAlternative() {}
+function fibonacciAlternative(number) {
+  let array = [0, 1];
 
-console.log(fibonnacciRecursion(8));
-// console.log(fibonacciAlternative());
+  for (let i = 2; i < number + 1; i++) {
+    array.push(array[i - 1] + array[i - 2]);
+  }
+
+  return array[number];
+}
+
+console.log(fibonnacciRecursion(43));
+console.log(fibonacciAlternative(43));
